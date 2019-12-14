@@ -1,0 +1,19 @@
+{
+  "name": "node-express-starter",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "babel-node ./scripts/start.js",
+    "startDev": "nodemon --exec yarn start"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {
+    "babel/preset-env": "^7.7.6",
+    "babel-cli": "^6.26.0",
+    "@babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
+  }
+}
