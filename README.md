@@ -14,6 +14,7 @@ A starter template for express application
 |:---:|:---:|
 |httpsConfig|edit configs/app.config.js to start https|
 |auto reboot|restart app after modifying file|
+|response format|format response data|
 
 ## Package
 |Name|Description|
@@ -29,6 +30,7 @@ The full folder structure of this app is explained below:
 |.babelrc|babel`s config|
 |.gitignore|git`s ignore config|
 |.editorconfig|editor`s config ide use this file to format your code|
+|nodemon.json|nodemon`s config|
 |src|Contains your source code that will be compiled to the dist dir|
 |src/routers/|app`s router|
 |src/server.js|app`s main file start server|
