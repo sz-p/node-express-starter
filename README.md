@@ -6,17 +6,19 @@ A starter template for express application
 |Name|Description|
 |:---:|:---:|
 |start|start this application|
+|startDev|use this script during development|
 
 
 ## Features
 |Name|Description|
 |:---:|:---:|
 |httpsConfig|edit configs/app.config.js to start https|
+|auto reboot|restart app after modifying file|
 
 ## Package
 |Name|Description|
 |:---:|:---:|
-|httpsConfig|edit configs/app.config.js to start https|
+|nodemon|Simple monitor script for use during development of a node.js app|
 
 ## Project Structure
 The full folder structure of this app is explained below:

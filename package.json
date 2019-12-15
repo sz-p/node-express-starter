@@ -6,11 +6,12 @@
     "startDev": "nodemon --exec yarn start"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "webpack": "^4.41.2"
+    "express": "^4.17.1"
   },
   "license": "MIT",
   "devDependencies": {
+    "webpack": "^4.41.2",
+    "nodemon": "^2.0.2",
     "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
     "@babel/node": "^7.7.4",
