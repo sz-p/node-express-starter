@@ -7,7 +7,7 @@ A starter template for express application
 |:---:|:---:|
 |start|start this application|
 |startDev|use this script during development|
-
+|build|build this application|
 
 ## Features
 |Name|Description|
@@ -15,6 +15,7 @@ A starter template for express application
 |httpsConfig|edit configs/app.config.js to start https|
 |auto reboot|restart app after modifying file|
 |response format|format response data|
+|build|use webpack to get bundle file|
 
 ## Package
 |Name|Description|
