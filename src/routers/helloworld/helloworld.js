@@ -3,8 +3,7 @@ import RP from '../../responseformat';
 /**
  * hello world Handle
  *
- * @param {String} projectID 项目ID
-*/
+ */
 export const helloWorldHandle = function() {
 	return new Promise((resolve, reject) => {
 		resolve(RP.success({ api: 'helloworld', data: 'helloworld' }));
