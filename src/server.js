@@ -3,14 +3,19 @@ import appConfig from '../configs/app.config';
 import routers from './routers/routers';
 import https from 'https';
 import fs from 'fs';
+import bodyParser from 'body-parser';
 
 const { PORT } = appConfig;
 
 const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ limit: '16mb', extended: false }));
+
 routers.forEach((item, index) => {
 	item(app);
 });
-
+app.use(bodyParser.json());
 // start listen
 if (appConfig.HTTPS.enable) {
 	const options = {
