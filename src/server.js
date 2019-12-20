@@ -12,10 +12,14 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ limit: '16mb', extended: false }));
 
-routers.forEach((item, index) => {
-	item(app);
+// init routers
+routers.forEach((item) => {
+	app[item[1]](item[0], (req, res) => {
+		const requestData = Object.assign(req.query, req.body);
+		item[2](requestData).then((d) => res.send(d)).catch((d) => res.send(d));
+	});
 });
-app.use(bodyParser.json());
+
 // start listen
 if (appConfig.HTTPS.enable) {
 	const options = {

@@ -1,3 +1,5 @@
-import helloworld from './helloworld/helloworld';
+import helloWorldHandle from './helloworld/helloworld';
 
-export default [ helloworld ];
+export default [ 
+  [ '/helloworld', 'get', helloWorldHandle ] 
+];
