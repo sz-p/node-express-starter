@@ -39,3 +39,6 @@ The full folder structure of this app is explained below:
 |configs|Contains your config files|
 |configs/app.config.js|this app`s config like host port|
 |scripts|some scripts used in package.json|
+s
+## TODO
+[ ] add loger
