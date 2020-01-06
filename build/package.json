@@ -2,6 +2,6 @@
   "name": "node-express-starter",
   "version": "0.1.0",
   "scripts": {
-    "start": "node ./bundle.214ad84b.js"
+    "start": "node ./bundle.a54229ee.js"
   }
 }

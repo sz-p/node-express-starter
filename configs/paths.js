@@ -7,5 +7,6 @@ module.exports = {
 	mainjs: path.resolve(__dirname, '../src/server.js'),
 	build: path.resolve(__dirname, '../build'),
 	src: path.resolve(__dirname, '../src'),
+	appConfig: path.resolve(__dirname, './app.config.js'),
 	config: path.resolve(__dirname)
 };
