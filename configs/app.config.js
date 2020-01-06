@@ -6,12 +6,18 @@ export default {
 		certPath: ''
 	},
 	mysql: {
-		enable: true,
 		mysqlConfig: {
-			host: '',
+			host: 'localhost',
 			user: '',
 			password: '',
 			database: ''
+		}
+	},
+	mongodb: {
+		mongodbConfig: {
+			host: 'localhost',
+			port: '27017',
+			dbName: ''
 		}
 	}
 };
