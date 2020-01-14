@@ -1,6 +1,6 @@
 import { query } from './connect';
 
-export const getUser = () => {
+const getUser = () => {
 	return new Promise((resolve, reject) => {
 		const sql = ``;
 		query(sql, (error, results, fields) => {
@@ -12,3 +12,7 @@ export const getUser = () => {
 		});
 	});
 };
+
+export {
+  export
+}

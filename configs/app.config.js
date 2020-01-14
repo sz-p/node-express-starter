@@ -15,6 +15,8 @@ export default {
 	},
 	mongodb: {
 		mongodbConfig: {
+      user:'',
+      password:'',
 			host: 'localhost',
 			port: '27017',
 			dbName: ''
