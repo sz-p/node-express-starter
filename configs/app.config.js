@@ -1,5 +1,6 @@
 export default {
 	PORT: 4000,
+	REQUESTLIMITSIZE: '1mb',
 	HTTPS: {
 		enable: false,
 		keyPath: '',
@@ -15,8 +16,8 @@ export default {
 	},
 	mongodb: {
 		mongodbConfig: {
-      user:'',
-      password:'',
+			user: '',
+			password: '',
 			host: 'localhost',
 			port: '27017',
 			dbName: ''
