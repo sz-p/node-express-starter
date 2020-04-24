@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ limit: '16mb', extended: false }));
 routers.forEach((item) => {
 	app[item[1]](item[0], (req, res) => {
 		const requestData = Object.assign(req.query, req.body);
-		item[2](requestData).then((d) => res.send(d)).catch((d) => res.send(d));
+		item[2](requestData, req, res).then((d) => res.send(d)).catch((d) => res.send(d));
 	});
 });
 
