@@ -1,7 +1,0 @@
-{
-  "name": "node-express-starter",
-  "version": "0.1.0",
-  "scripts": {
-    "start": "node ./bundle.912f21b3.js"
-  }
-}
