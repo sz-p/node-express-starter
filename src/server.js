@@ -4,13 +4,13 @@ import routers from './routers/routers';
 import https from 'https';
 import fs from 'fs';
 import bodyParser from 'body-parser';
+import addLoader from "./loader/loader";
 
 const { PORT, REQUESTLIMITSIZE } = appConfig;
 
 const app = express();
 
-app.use(bodyParser.json({ limit: REQUESTLIMITSIZE }));
-app.use(bodyParser.urlencoded({ limit: REQUESTLIMITSIZE, extended: false }));
+addLoader(app);
 
 // init routers
 routers.forEach((item) => {
