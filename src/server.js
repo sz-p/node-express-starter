@@ -7,7 +7,6 @@ import addLoader from "./loader/loader";
 import paths from "../configs/paths";
 const { PORT, REQUESTLIMITSIZE } = appConfig;
 
-console.log(paths.datas);
 const app = express();
 
 addLoader(app);
