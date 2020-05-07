@@ -44,4 +44,5 @@ The full folder structure of this app is explained below:
 s
 ## TODO
 [ ] add loger
-[ ] add request White list
+[x] add request White list
+[ ] move app config in src
