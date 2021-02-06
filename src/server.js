@@ -1,8 +1,8 @@
-import express from 'express';
-import appConfig from '../configs/app.config';
-import routers from './routers/routers';
-import https from 'https';
-import fs from 'fs';
+import express from "express";
+import appConfig from "../configs/app.config";
+import routers from "./routers/routers";
+import https from "https";
+import fs from "fs";
 import addLoader from "./loader/loader";
 import paths from "../configs/paths";
 const { PORT, REQUESTLIMITSIZE } = appConfig;
@@ -13,9 +13,12 @@ addLoader(app);
 
 // init routers
 routers.forEach((item) => {
-  app[item[1]](item[0], (req, res) => {
+  app[item.method](item.router, (req, res) => {
     const requestData = Object.assign(req.query, req.body);
-    item[2](requestData, req, res).then((d) => res.send(d)).catch((d) => res.send(d));
+    item
+      .handler(requestData, req, res)
+      .then((d) => res.send(d))
+      .catch((d) => res.send(d));
   });
 });
 
@@ -23,7 +26,7 @@ routers.forEach((item) => {
 if (appConfig.HTTPS.enable) {
   const options = {
     key: fs.readFileSync(appDirectory + appConfig.HTTPS.keyPath),
-    cert: fs.readFileSync(appDirectory + appConfig.HTTPS.certPath)
+    cert: fs.readFileSync(appDirectory + appConfig.HTTPS.certPath),
   };
   https.createServer(options, app).listen(PORT);
 } else {

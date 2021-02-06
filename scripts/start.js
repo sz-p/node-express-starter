@@ -1,4 +1,4 @@
-const config = require("../configs/app.config").default;
+import config from "../configs/app.config";
 try {
   require("../src/server.js");
   console.log(

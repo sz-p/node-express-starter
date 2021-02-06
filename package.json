@@ -4,7 +4,8 @@
   "scripts": {
     "start": "babel-node ./scripts/start.js",
     "startDev": "nodemon --exec yarn start",
-    "build": "node ./scripts/build.js"
+    "build": "node ./scripts/build.js",
+    "showRouter": "babel-node ./scripts/showRouter.js"
   },
   "dependencies": {
     "express": "^4.17.1",

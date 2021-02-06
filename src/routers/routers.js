@@ -1,5 +1,10 @@
-import helloWorldHandle from './helloworld/helloworld';
+import helloWorldHandle from "./helloworld/helloworld";
 
-export default [ 
-  [ '/helloworld', 'get', helloWorldHandle ] 
+export default [
+  {
+    router: "/helloworld",
+    method: "get",
+    handler: helloWorldHandle,
+    description: "hello world",
+  },
 ];
