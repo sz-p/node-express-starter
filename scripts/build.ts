@@ -1,3 +1,5 @@
+import config from "../configs/app.config";
+
 process.env.NODE_ENV = 'production';
 process.env.BABEL_ENV = 'production';
 
@@ -8,20 +10,8 @@ const fs = require('fs');
 const webpackConfig = require('../configs/webpack.config');
 const compiler = webpack(webpackConfig);
 
-function deleteFolder(path: string) {
-  let files = [];
-  if (fs.existsSync(path)) {
-    files = fs.readdirSync(path);
-    files.forEach(function (file: string) {
-      var curPath = path + "/" + file;
-      if (fs.statSync(curPath).isDirectory()) { // recurse
-        deleteFolder(curPath);
-      } else { // delete file
-        fs.unlinkSync(curPath);
-      }
-    });
-    fs.rmdirSync(path);
-  }
+function deleteFolder(buildPath: string) {
+  fs.rmdirSync(buildPath, { recursive: true });
 }
 
 const removeBuildDir = function () {
@@ -47,7 +37,18 @@ const createPackageJson = function () {
 }
 
 const createStarter = function (bundleFileName: string) {
-  fs.writeFileSync(paths.build + '/starter.js', `require("./${bundleFileName}");`);
+  const startScriptSrc = 
+  `try {
+  require("./${bundleFileName}");
+  console.log(
+    "\x1B[32m%s\x1B[0m",
+    "Server running at http://localhost:${config.PORT}"
+  );
+} catch (e) {
+  console.log("\x1B[31m%s\x1B[0m", "Server startup failed");
+  console.log("\x1B[31m%s\x1B[0m", e);
+}`;
+  fs.writeFileSync(paths.build + '/starter.js', startScriptSrc);
 }
 
 const runWebPack = function () {
