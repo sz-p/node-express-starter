@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 import config from '../../../configs/app.config';
 
 const { user, password, host, port, dbName } = config.mongodb.mongodbConfig;

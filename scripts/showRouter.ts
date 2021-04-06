@@ -1,11 +1,11 @@
-import routers from "../src/routers/routers";
+import { routers } from "../src/routers/routers";
 import config from "../configs/app.config";
-const structDatas = [];
+const structuralData = [];
 for (let i = 0; i < routers.length; i++) {
-  structDatas.push({
+  structuralData.push({
     endpoint: `http://localhost:${config.PORT}${routers[i].router}`,
     method: routers[i].method,
     description: routers[i].description,
   });
 }
-console.table(structDatas);
+console.table(structuralData);
