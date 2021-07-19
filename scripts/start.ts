@@ -1,6 +1,6 @@
 import config from "../configs/app.config";
 try {
-  require("../src/server.ts");
+  require("../src/main.ts");
   console.log(
     "\x1B[32m%s\x1B[0m",
     `Server running at http://localhost:${config.PORT}`
