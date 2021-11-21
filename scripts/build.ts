@@ -1,8 +1,9 @@
-import config from "../configs/app.config";
+import { getConfig } from "../utils/utils"
 
 process.env.NODE_ENV = 'production';
 process.env.BABEL_ENV = 'production';
 
+const config = getConfig()
 const webpack = require('webpack');
 const paths = require('../configs/paths');
 const fs = require('fs');
@@ -38,7 +39,8 @@ const createPackageJson = function () {
 
 const createStarter = function (bundleFileName: string) {
   const startScriptSrc = 
-  `try {
+  `process.env.NODE_ENV = 'production'
+  try {
   require("./${bundleFileName}");
   console.log(
     "\x1B[32m%s\x1B[0m",

@@ -2,13 +2,15 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "es6",
-		"outDir": "outExtension",
+		"outDir": "dist",
 		"lib": [
 			"es6","dom"
 		],
 		"sourceMap": true,
 		"strict": true,
     "allowJs": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,  
 	},
   "experimentalDecorators": true,
   "rootDir": ".",

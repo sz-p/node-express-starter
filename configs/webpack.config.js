@@ -2,6 +2,7 @@ const paths = require("./paths");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 const SimpleProgressPlugin = require("webpack-simple-progress-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -28,5 +29,17 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".js", ".json"],
   },
-  plugins: [new BundleAnalyzerPlugin(), new SimpleProgressPlugin()],
+  plugins: [
+    new BundleAnalyzerPlugin(),
+    new SimpleProgressPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "configs/config.default.json",
+          to: "configs/config.default.json",
+        },
+        { from: "configs/config.json", to: "configs/config.json" },
+      ],
+    }),
+  ],
 };

@@ -1,14 +1,12 @@
-import * as express from "express";
-import appConfig from "../configs/app.config";
+import express from "express";
+import { getConfig } from "../utils/utils"
 import { routers } from "./routers/routers";
 import { addLoader } from "./loader/loader";
 import * as https from "https";
 import * as fs from "fs";
-// import paths from "../configs/paths";
-const { PORT, HTTPS } = appConfig;
-
+const config = getConfig()
+const { PORT, HTTPS } = config;
 const app = express();
-
 addLoader(app);
 
 // init routers
