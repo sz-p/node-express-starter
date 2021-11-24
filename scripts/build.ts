@@ -1,13 +1,12 @@
 import { getConfig } from "../utils/utils"
+import paths from '../configs/paths'
+import * as fs from 'fs'
+const webpack = require('webpack');
 
 process.env.NODE_ENV = 'production';
 process.env.BABEL_ENV = 'production';
 
 const config = getConfig()
-const webpack = require('webpack');
-const paths = require('../configs/paths');
-const fs = require('fs');
-
 const webpackConfig = require('../configs/webpack.config');
 const compiler = webpack(webpackConfig);
 
@@ -38,8 +37,8 @@ const createPackageJson = function () {
 }
 
 const createStarter = function (bundleFileName: string) {
-  const startScriptSrc = 
-  `process.env.NODE_ENV = 'production'
+  const startScriptSrc =
+    `process.env.NODE_ENV = 'production'
   try {
   require("./${bundleFileName}");
   console.log(

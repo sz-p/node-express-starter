@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import paths from "../configs/paths";
-import { merge } from "lodash";
+import merge from "lodash/merge";
 export const isPathExists = function (p: string): boolean {
   try {
     fs.accessSync(p);

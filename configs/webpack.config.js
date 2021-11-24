@@ -1,4 +1,4 @@
-const paths = require("./paths");
+import paths from "../configs/paths";
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 const SimpleProgressPlugin = require("webpack-simple-progress-plugin");

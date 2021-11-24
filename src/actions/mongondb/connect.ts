@@ -1,6 +1,7 @@
 import * as mongoose from 'mongoose';
-import config from '../../../configs/app.config';
+import { getConfig } from "../../../utils/utils"
 
+const config = getConfig()
 const { user, password, host, port, dbName } = config.mongodb.mongodbConfig;
 
 // Connection URL

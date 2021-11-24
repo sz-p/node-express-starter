@@ -21,5 +21,6 @@ yarn.lock
 # webStorm Controller files
 .idea
 build
+dist
 
 configs/config.json

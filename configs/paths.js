@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === "production") {
 export default {
   packageJson: resolveApp("./package.json"),
   mainjs: resolveApp("./src/main.ts"),
-  build: resolveApp("./build"),
+  build: resolveApp("./dist"),
   src: resolveApp("./src"),
   config: resolveApp("./configs"),
   configJson: resolveApp("./configs/config.json"),

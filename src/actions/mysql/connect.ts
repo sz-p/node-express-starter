@@ -1,6 +1,7 @@
-import config from '../../../configs/app.config';
+import { getConfig } from "../../../utils/utils"
 import * as mysql from 'mysql';
 
+const config = getConfig()
 const mysqlConfig = config.mysql.mysqlConfig;
 
 const pool = mysql.createPool(mysqlConfig);
